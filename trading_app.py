@@ -13,7 +13,8 @@ def simulate_stock_data(num_days=365, initial_price=100):
     Simulates historical stock price data with some randomness and trend.
     """
     np.random.seed(42) # for reproducibility
-    dates = pd.date_date_range(start='2023-01-01', periods=num_days, freq='D')
+    # Corrected: Changed pd.date_date_range to pd.date_range
+    dates = pd.date_range(start='2023-01-01', periods=num_days, freq='D')
     prices = [initial_price]
     for _ in range(1, num_days):
         # Simulate daily change with some trend and noise
